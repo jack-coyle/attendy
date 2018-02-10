@@ -17,6 +17,7 @@ foreach ($attendance as $key => $value) {
     echo "<tr><td>"+$key+'</td><td>'+$record['name']+'</td><td>'+$record['sid']+'</td></tr>';
     }
 }
+?>
 </table>
 </body>
 </html>

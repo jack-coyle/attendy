@@ -10,7 +10,7 @@
 <th>SID</th>
 </tr>
 <?php
-$attendance = json_decode(file_get_contents("./attendance.php"), true);
+$attendance = json_decode(file_get_contents("./attendance.json"), true);
 $days = array();
 foreach ($attendance as $key => $value) {
     foreach ($value as $record) {

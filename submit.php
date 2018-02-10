@@ -16,7 +16,7 @@ $record = array(
 "right" => $right
 );
 $today = date("Y-m-d");
-$attendance = json_decode(file_get_contents("./attendance.json"));
+$attendance = json_decode(file_get_contents("./attendance.json"), true);
 $today_attendance = $attendance[$today] ?: array();
 $today_attendance[$sid] = $record;
 $attendance[$today] = $today_attendance;

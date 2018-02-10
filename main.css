@@ -8,8 +8,8 @@ input[type=text], select, textarea{
   resize: vertical;
 }
 
-/* Style the label to display next to the inputs */
-label {
+/* Style the label to display next to the input */
+label {}
   padding: 12px 12px 12px 0;
   display: inline-block;
 }

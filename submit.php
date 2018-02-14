@@ -30,6 +30,6 @@ if ($secret_word != $real_word) {
 
 $response = $service->spreadsheets_values->get($spreadsheetId, $date_range);
 $dates = $response["values"];
-echo $dates;
+echo var_dump($dates);
 
 ?>

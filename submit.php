@@ -34,7 +34,7 @@ if (array_values(array_slice($dates, -1))[0] != $today) {
     $dates[] = $today;
 }
 $char = chr(64+count($dates));
-$new_range = $char. $char;
+$new_range = $char .":". $char;
 // TODO: Assign values to desired properties of `requestBody`:
 $dateRequestBody = new Google_Service_Sheets_ValueRange();
 $dateRequestBody->setMajorDimension(1);

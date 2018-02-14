@@ -9,7 +9,7 @@ $service = new Google_Service_Sheets($client);
 $spreadsheetId = '1b_0C0nt6orsgP2Q_Y09im4oYfWI5o8QSO8lVfZVDSX4';
 
 //the range of dates
-$date_range = 'A1:A15';
+$date_range = 'A1:P1';
 
 //data from user
 $name = $_POST['name'];

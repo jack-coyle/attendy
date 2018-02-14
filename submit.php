@@ -49,5 +49,5 @@ $studentRequestBody->setRange($new_range);
 $studentRequestBody->setValues(array(array($name)));
 
 $response = $service->spreadsheets_values->append($spreadsheetId, $new_range, $studentRequestBody, array("valueInputOption"=>"RAW"));
-
+echo $new_range;
 ?>

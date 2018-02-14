@@ -44,13 +44,14 @@ $dateRequestBody->setValues(array($dates));
 $response = $service->spreadsheets_values->update($spreadsheetId, $date_range, $dateRequestBody, array("valueInputOption"=>"RAW"));
 
 $name_response = $service->spreadsheets_values->get($spreadsheetId, $new_range);
-echo var_dump($name_response, true);
+$names = $name_response['values'];
+$names[] = array($name);
 
 $studentRequestBody = new Google_Service_Sheets_ValueRange();
-$studentRequestBody->setMajorDimension(2);
+$studentRequestBody->setMajorDimension(1);
 $studentRequestBody->setRange($new_range);
-$studentRequestBody->setValues(array(array($name)));
+$studentRequestBody->setValues($names);
 
-$response = $service->spreadsheets_values->append($spreadsheetId, $new_range, $studentRequestBody, array("valueInputOption"=>"RAW"));
+$response = $service->spreadsheets_values->update($spreadsheetId, $new_range, $studentRequestBody, array("valueInputOption"=>"RAW"));
 echo $new_range;
 ?>

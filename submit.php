@@ -43,6 +43,9 @@ $dateRequestBody->setValues(array($dates));
 
 $response = $service->spreadsheets_values->update($spreadsheetId, $date_range, $dateRequestBody, array("valueInputOption"=>"RAW"));
 
+$name_response = $service->spreadsheets_values->get($spreadsheetId, $new_range);
+echo var_dump($name_response, true);
+
 $studentRequestBody = new Google_Service_Sheets_ValueRange();
 $studentRequestBody->setMajorDimension(2);
 $studentRequestBody->setRange($new_range);

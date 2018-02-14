@@ -1,25 +1,35 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$client = getClient();
+
+$service = new Google_Service_Sheets($client);
+
+// The ID of the spreadsheet to update.
+$spreadsheetId = '1b_0C0nt6orsgP2Q_Y09im4oYfWI5o8QSO8lVfZVDSX4';
+
+//the range of dates
+$date_range = 'A1:A15';
+
+//data from user
 $name = $_POST['name'];
 $sid = $_POST['sid'];
 $secret_word = $_POST['word'];
 $left = $_POST['sid-left'];
 $right = $_POST['sid-right'];
+
+//formatted date
+$today = date("Y-m-d");
+
+//check the secret word
 $real_word = file_get_contents("./secretword.txt");
 if ($secret_word != $real_word) {
     echo "<h3>You got the secret word wrong!</h3><p>Try again, or go to class!</p>";
     return;
 }
-$record = array(
-"name" => $name,
-"sid" => $sid,
-"left" => $left,
-"right" => $right
-);
-$today = date("Y-m-d");
-$attendance = json_decode(file_get_contents("./attendance.json"), true);
-$today_attendance = $attendance[$today] ?: array();
-$today_attendance[$sid] = $record;
-$attendance[$today] = $today_attendance;
-file_put_contents("./attendance.json", json_encode($attendance));
-echo "<h3>Thanks!</h3><p>Your attendance has been recorded.</p>";
+
+$response = $service->spreadsheets_values->get($spreadsheetId, $date_range);
+$dates = $response["values"];
+echo $dates;
+
 ?>

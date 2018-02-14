@@ -41,13 +41,13 @@ $dateRequestBody->setMajorDimension(1);
 $dateRequestBody->setRange($date_range);
 $dateRequestBody->setValues(array($dates));
 
-$response = $service->spreadsheets_values->update($spreadsheetId, $date_range, $dateRequestBody);
+$response = $service->spreadsheets_values->update($spreadsheetId, $date_range, $dateRequestBody, array("valueInputOption"=>"RAW"));
 
 $studentRequestBody = new Google_Service_Sheets_ValueRange();
 $studentRequestBody->setMajorDimension(2);
 $studentRequestBody->setRange($new_range);
 $studentRequestBody->setValues(array(array($name)));
 
-$response = $service->spreadsheets_values->append($spreadsheetId, $new_range, $studentRequestBody);
+$response = $service->spreadsheets_values->append($spreadsheetId, $new_range, $studentRequestBody, array("valueInputOption"=>"RAW"));
 
 ?>

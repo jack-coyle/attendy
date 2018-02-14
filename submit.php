@@ -33,7 +33,7 @@ $dates = $response["values"][0];
 if (array_values(array_slice($dates, -1))[0] != $today) {
     $dates[] = $today;
 }
-$char = chr(64+count($dates))
+$char = chr(64+count($dates));
 $new_range = $char . "2:" . $char . "50";
 // TODO: Assign values to desired properties of `requestBody`:
 $dateRequestBody = new Google_Service_Sheets_ValueRange();

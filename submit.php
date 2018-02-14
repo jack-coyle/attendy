@@ -29,7 +29,25 @@ if ($secret_word != $real_word) {
 }
 
 $response = $service->spreadsheets_values->get($spreadsheetId, $date_range);
-$dates = $response["values"];
-echo var_dump($dates);
+$dates = $response["values"][0];
+if (array_values(array_slice($dates, -1))[0] != $today) {
+    $dates[] = $today;
+}
+$char = chr(64+count($dates))
+$new_range = $char . "2:" . $char . "50";
+// TODO: Assign values to desired properties of `requestBody`:
+$dateRequestBody = new Google_Service_Sheets_ValueRange();
+$dateRequestBody->setMajorDimension(1);
+$dateRequestBody->setRange($date_range);
+$dateRequestBody->setValues(array($dates));
+
+$response = $service->spreadsheets_values->update($spreadsheetId, $date_range, $dateRequestBody);
+
+$studentRequestBody = new Google_Service_Sheets_ValueRange();
+$studentRequestBody->setMajorDimension(2);
+$studentRequestBody->setRange($new_range);
+$studentRequestBody->setValues(array(array($name)));
+
+$response = $service->spreadsheets_values->append($spreadsheetId, $new_range, $studentRequestBody);
 
 ?>

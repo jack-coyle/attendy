@@ -9,7 +9,7 @@ $service = new Google_Service_Sheets($client);
 $spreadsheetId = '1b_0C0nt6orsgP2Q_Y09im4oYfWI5o8QSO8lVfZVDSX4';
 
 //the range of dates
-$date_range = 'A1:P1';
+$date_range = '1:1';
 
 //data from user
 $name = $_POST['name'];
@@ -34,7 +34,7 @@ if (array_values(array_slice($dates, -1))[0] != $today) {
     $dates[] = $today;
 }
 $char = chr(64+count($dates));
-$new_range = $char . "1:" . $char . "50";
+$new_range = $char. $char;
 // TODO: Assign values to desired properties of `requestBody`:
 $dateRequestBody = new Google_Service_Sheets_ValueRange();
 $dateRequestBody->setMajorDimension(1);

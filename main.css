@@ -1,17 +1,55 @@
-/* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
+/** Global Styles **/
+
+* {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #555;
 }
 
-/* Style the label to display next to the input */
-label {}
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+body {
+  margin: 20px 40px;
+}
+
+button {
+  padding: 20px 50px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border-color: #e2e2e2;
+  background-color: #6AD3D1;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+button > a {
+  padding: 10px 25px;
+  font-size:1.2em;
+}
+
+header {
+  background-color: #eee;
+  padding: 30px 40px;
+  margin: 0 -20px;
 }
 
 /* Style the submit button */

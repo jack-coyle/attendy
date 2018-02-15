@@ -65,8 +65,10 @@ input[type=submit] {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
     body {
         background: url('6367420139_d5bbd6643b_b.jpg');
+        [class*="col-"] {
+        width: 100%;
     }
 }

@@ -53,5 +53,6 @@ $studentRequestBody->setRange($new_range);
 $studentRequestBody->setValues($names);
 
 $response = $service->spreadsheets_values->update($spreadsheetId, $new_range, $studentRequestBody, array("valueInputOption"=>"RAW"));
-echo $new_range;
+//echo $new_range;
+echo "<h3>Your attendance has been recorded. Now pay attention to Stephen!</p>";
 ?>

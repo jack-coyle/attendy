@@ -64,3 +64,9 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 500px) {
+    body {
+        background: url('6367420139_d5bbd6643b_b.jpg');
+    }
+}

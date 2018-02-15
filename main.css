@@ -4,19 +4,13 @@
   font-family: sans-serif;
   font-size: 16px;
   color: #555;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
-  font-size: 2em;
-}
-
-h2 {
-  font-size: 1.4em;
-}
-
-h3 {
-  font-size: 1.4em;
-  color: #000;
+  font-size: 1.6em;
+  margin-bottom: 30px;
 }
 
 a {
@@ -27,32 +21,41 @@ p {
   line-height: 1.5em;
 }
 
+/* Layout */
+
+html {
+  background: url('kitten.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 50%;
+}
+
 body {
-  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
 }
 
-button {
-  padding: 20px 50px;
-  margin-top: 20px;
-  border-radius: 20px;
-  border-color: #e2e2e2;
-  background-color: #6AD3D1;
-  font-weight: bold;
-  font-size: 1.3em;
+form {
+  padding-top: 40px;
+  color: black;
+  background: transparent;
 }
 
-button > a {
-  padding: 10px 25px;
-  font-size:1.2em;
+form > * {
+  background: transparent;
 }
 
-header {
-  background-color: #eee;
-  padding: 30px 40px;
-  margin: 0 -20px;
+/* Input Boxes */
+
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid #555;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 220px;
 }
 
-/* Style the submit button */
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -60,42 +63,4 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
-  margin: 0 auto;
-}
-
-/* Style the container */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
 }
